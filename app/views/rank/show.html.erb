@@ -1,0 +1,7 @@
+<p class="span12">
+	<%= image_tag(current_user.image) %>
+	<%= current_user.name %>
+</p>
+<% @likes.each do |like| %>
+	<span class="span1"><%= like.name %></span>
+<% end %>
