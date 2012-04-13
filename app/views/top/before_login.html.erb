@@ -1,0 +1,20 @@
+<div class="hero-unit">
+  <h1><%= t(".hero.welcome") %></h1>
+  <p><%= t(".hero.summary") %></p>
+  <p><%= link_to t(".login_button.facebook"), user_omniauth_authorize_path(:facebook), :class=>"btn btn-primary btn-large" %></p>
+</div>
+
+<div class="row">
+  <div class="span4">
+    <h2><%= t(".captions.cap1.title") %></h2>
+     <p><%= t(".captions.cap1.aside") %></p>
+  </div>
+  <div class="span4">
+    <h2><%= t(".captions.cap2.title") %></h2>
+     <p><%= t(".captions.cap2.aside") %></p>
+   </div>
+  <div class="span4">
+    <h2><%= t(".captions.cap3.title") %></h2>
+     <p><%= t(".captions.cap3.aside") %></p>
+  </div>
+</div>
