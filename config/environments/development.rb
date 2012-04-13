@@ -1,4 +1,8 @@
 FbMatch::Application.configure do
+  FACEBOOK_APP_ID     = '432093693473482'
+  FACEBOOK_APP_SECRET = '9baf889a218d494cb035582ed2f3b5c3'
+  FACEBOOK_APP_SCOPE  = 'user_likes'
+  
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
