@@ -9,6 +9,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string     :locale
       t.string     :timezone
       t.datetime   :deleted_at 
+      
       t.timestamps
     end
 

@@ -9,15 +9,16 @@ class User < ActiveRecord::Base
       return connect.user
     else # Create a user with a stub password. 
       ActiveRecord::Base.transaction do
-        user = User.create!(
-          :name        => auth.info.name,
-          :email       => nil,
-          :screen_name => auth.info.nickname || auth.uid.to_s,
-          :image       => auth.info.image,
-          :url         => auth.info.urls.facebook,
-          :timezone    => auth.extra.raw_info.timezone,
-          :locale      => I18n.locale.to_s
-        )
+        user = User.new
+        user.name = auth.info.name
+        user.email = auth.info.email
+        user.screen_name = auth.info.nickname || auth.uid.to_s
+        user.image = auth.info.image
+        user.url = auth.info.urls.facebook
+        user.timezone = auth.extra.raw_info.timezone
+        user.locale = I18n.locale.to_s
+        user.save
+
         Connect.create_with_omniauth(auth, user)
         return user
       end
